@@ -1,0 +1,1181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name></display-name>
+	<!-- 乱码过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>Encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 登录验证过滤器 -->
+	 <filter>
+  		<filter-name>login</filter-name>
+  		<filter-class>filter.LoginFilter</filter-class>
+ 	</filter>
+ 	<filter-mapping>
+  		<filter-name>login</filter-name>
+ 		 <url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+ 
+	<!-- 管理员功能 -->
+	<!-- 登录登出配置 -->
+	<servlet>
+		<servlet-name>ServletLogout</servlet-name>
+		<servlet-class>servlet.Servletlogout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletLogout</servlet-name>
+		<url-pattern>/ServletLogout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ServletLogin</servlet-name>
+		<servlet-class>servlet.ServletLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletLogin</servlet-name>
+		<url-pattern>/ServletLogin</url-pattern>
+	</servlet-mapping>
+	<!-- 查询密码 -->
+	<servlet>
+		<servlet-name>ServletPwd</servlet-name>
+		<servlet-class>servlet.ServletPwd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletPwd</servlet-name>
+		<url-pattern>/ServletPwd</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ServletselectPwd</servlet-name>
+		<servlet-class>servlet.ServletselectPwd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletselectPwd</servlet-name>
+		<url-pattern>/ServletselectPwd</url-pattern>
+	</servlet-mapping>
+	<!-- 修改密码 -->
+	<servlet>
+		<servlet-name>ServletEditPwd</servlet-name>
+		<servlet-class>servlet.ServletEditPwd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditPwd</servlet-name>
+		<url-pattern>/ServletEditPwd</url-pattern>
+	</servlet-mapping>
+	<!-- 查询信息 -->
+	<servlet>
+		<servlet-name>ServletInfo</servlet-name>
+		<servlet-class>servlet.ServletInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletInfo</servlet-name>
+		<url-pattern>/ServletInfo</url-pattern>
+	</servlet-mapping>
+	<!-- 添加学生信息 -->
+	<servlet>
+		<servlet-name>ServletaddStudent</servlet-name>
+		<servlet-class>servlet.ServletaddStudent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddStudent</servlet-name>
+		<url-pattern>/ServletaddStudent</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有学生信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllStu</servlet-name>
+		<servlet-class>servlet.ServletFindAllStu</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllStu</servlet-name>
+		<url-pattern>/ServletFindAllStu</url-pattern>
+	</servlet-mapping>
+	<!-- 删除学生信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteStu</servlet-name>
+		<servlet-class>servlet.ServletDeleteStu</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteStu</servlet-name>
+		<url-pattern>/ServletDeleteStu</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个学生信息 -->
+	<servlet>
+		<servlet-name>ServletSelectStu</servlet-name>
+		<servlet-class>servlet.ServletSelectStu</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectStu</servlet-name>
+		<url-pattern>/ServletSelectStu</url-pattern>
+	</servlet-mapping>
+	<!-- 修改学生信息 -->
+	<servlet>
+		<servlet-name>ServletEditStu</servlet-name>
+		<servlet-class>servlet.ServletEditStu</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditStu</servlet-name>
+		<url-pattern>/ServletEditStu</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加设备信息 -->
+	<servlet>
+		<servlet-name>ServletaddXHJ</servlet-name>
+		<servlet-class>servlet.ServletaddXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddXHJ</servlet-name>
+		<url-pattern>/ServletaddXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllXHJ</servlet-name>
+		<servlet-class>servlet.ServletFindAllXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllXHJ</servlet-name>
+		<url-pattern>/ServletFindAllXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 删除设备信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteXHJ</servlet-name>
+		<servlet-class>servlet.ServletDeleteXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteXHJ</servlet-name>
+		<url-pattern>/ServletDeleteXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个设备信息 -->
+	<servlet>
+		<servlet-name>ServletSelectXHJ</servlet-name>
+		<servlet-class>servlet.ServletSelectXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectXHJ</servlet-name>
+		<url-pattern>/ServletSelectXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 修改设备信息 -->
+	<servlet>
+		<servlet-name>ServletEditXHJ</servlet-name>
+		<servlet-class>servlet.ServletEditXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditXHJ</servlet-name>
+		<url-pattern>/ServletEditXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>ServletSearchXHJ</servlet-name>
+		<servlet-class>servlet.ServletSearchXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchXHJ</servlet-name>
+		<url-pattern>/ServletSearchXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询预测信息 -->
+	<servlet>
+		<servlet-name>ServletSearchXHJP</servlet-name>
+		<servlet-class>servlet.ServletSearchXHJP</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchXHJP</servlet-name>
+		<url-pattern>/ServletSearchXHJP</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有预测信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllXHJP</servlet-name>
+		<servlet-class>servlet.ServletFindAllXHJP</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllXHJP</servlet-name>
+		<url-pattern>/ServletFindAllXHJP</url-pattern>
+	</servlet-mapping>
+	<!-- 删除预测信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteXHJP</servlet-name>
+		<servlet-class>servlet.ServletDeleteXHJP</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteXHJP</servlet-name>
+		<url-pattern>/ServletDeleteXHJP</url-pattern>
+	</servlet-mapping>
+	<!-- 预测故障信息 -->
+	<servlet>
+		<servlet-name>XHJPHMServlet</servlet-name>
+		<servlet-class>servlet.XHJPHMServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XHJPHMServlet</servlet-name>
+		<url-pattern>/XHJPHMServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 添加故障信息 -->
+	<servlet>
+		<servlet-name>ServletaddXHJF</servlet-name>
+		<servlet-class>servlet.ServletaddXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddXHJF</servlet-name>
+		<url-pattern>/ServletaddXHJF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllXHJF</servlet-name>
+		<servlet-class>servlet.ServletFindAllXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllXHJF</servlet-name>
+		<url-pattern>/ServletFindAllXHJF</url-pattern>
+	</servlet-mapping>
+	<!-- 删除故障信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteXHJF</servlet-name>
+		<servlet-class>servlet.ServletDeleteXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteXHJF</servlet-name>
+		<url-pattern>/ServletDeleteXHJF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个故障信息 -->
+	<servlet>
+		<servlet-name>ServletSelectXHJF</servlet-name>
+		<servlet-class>servlet.ServletSelectXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectXHJF</servlet-name>
+		<url-pattern>/ServletSelectXHJF</url-pattern>
+	</servlet-mapping>
+	<!-- 修改故障信息 -->
+	<servlet>
+		<servlet-name>ServletEditXHJF</servlet-name>
+		<servlet-class>servlet.ServletEditXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditXHJF</servlet-name>
+		<url-pattern>/ServletEditXHJF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>ServletSearchXHJF</servlet-name>
+		<servlet-class>servlet.ServletSearchXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchXHJF</servlet-name>
+		<url-pattern>/ServletSearchXHJF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加设备信息 -->
+	<servlet>
+		<servlet-name>ServletaddDC</servlet-name>
+		<servlet-class>servlet.ServletaddDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddDC</servlet-name>
+		<url-pattern>/ServletaddDC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllDC</servlet-name>
+		<servlet-class>servlet.ServletFindAllDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllDC</servlet-name>
+		<url-pattern>/ServletFindAllDC</url-pattern>
+	</servlet-mapping>
+	<!-- 删除设备信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteDC</servlet-name>
+		<servlet-class>servlet.ServletDeleteDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteDC</servlet-name>
+		<url-pattern>/ServletDeleteDC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个设备信息 -->
+	<servlet>
+		<servlet-name>ServletSelectDC</servlet-name>
+		<servlet-class>servlet.ServletSelectDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectDC</servlet-name>
+		<url-pattern>/ServletSelectDC</url-pattern>
+	</servlet-mapping>
+	<!-- 修改设备信息 -->
+	<servlet>
+		<servlet-name>ServletEditDC</servlet-name>
+		<servlet-class>servlet.ServletEditDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditDC</servlet-name>
+		<url-pattern>/ServletEditDC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>ServletSearchDC</servlet-name>
+		<servlet-class>servlet.ServletSearchDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchDC</servlet-name>
+		<url-pattern>/ServletSearchDC</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加故障信息 -->
+	<servlet>
+		<servlet-name>ServletaddDCF</servlet-name>
+		<servlet-class>servlet.ServletaddDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddDCF</servlet-name>
+		<url-pattern>/ServletaddDCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllDCF</servlet-name>
+		<servlet-class>servlet.ServletFindAllDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllDCF</servlet-name>
+		<url-pattern>/ServletFindAllDCF</url-pattern>
+	</servlet-mapping>
+	<!-- 删除故障信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteDCF</servlet-name>
+		<servlet-class>servlet.ServletDeleteDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteDCF</servlet-name>
+		<url-pattern>/ServletDeleteDCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个故障信息 -->
+	<servlet>
+		<servlet-name>ServletSelectDCF</servlet-name>
+		<servlet-class>servlet.ServletSelectDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectDCF</servlet-name>
+		<url-pattern>/ServletSelectDCF</url-pattern>
+	</servlet-mapping>
+	<!-- 修改故障信息 -->
+	<servlet>
+		<servlet-name>ServletEditDCF</servlet-name>
+		<servlet-class>servlet.ServletEditDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditDCF</servlet-name>
+		<url-pattern>/ServletEditDCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>ServletSearchDCF</servlet-name>
+		<servlet-class>servlet.ServletSearchDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchDCF</servlet-name>
+		<url-pattern>/ServletSearchDCF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加设备信息 -->
+	<servlet>
+		<servlet-name>ServletaddGDQD</servlet-name>
+		<servlet-class>servlet.ServletaddGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddGDQD</servlet-name>
+		<url-pattern>/ServletaddGDQD</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllGDQD</servlet-name>
+		<servlet-class>servlet.ServletFindAllGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllGDQD</servlet-name>
+		<url-pattern>/ServletFindAllGDQD</url-pattern>
+	</servlet-mapping>
+	<!-- 删除设备信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteGDQD</servlet-name>
+		<servlet-class>servlet.ServletDeleteGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteGDQD</servlet-name>
+		<url-pattern>/ServletDeleteGDQD</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个设备信息 -->
+	<servlet>
+		<servlet-name>ServletSelectGDQD</servlet-name>
+		<servlet-class>servlet.ServletSelectGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectGDQD</servlet-name>
+		<url-pattern>/ServletSelectGDQD</url-pattern>
+	</servlet-mapping>
+	<!-- 修改设备信息 -->
+	<servlet>
+		<servlet-name>ServletEditGDQD</servlet-name>
+		<servlet-class>servlet.ServletEditGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditGDQD</servlet-name>
+		<url-pattern>/ServletEditGDQD</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>ServletSearchGDQD</servlet-name>
+		<servlet-class>servlet.ServletSearchGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchGDQD</servlet-name>
+		<url-pattern>/ServletSearchGDQD</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加故障信息 -->
+	<servlet>
+		<servlet-name>ServletaddGDQDF</servlet-name>
+		<servlet-class>servlet.ServletaddGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddGDQDF</servlet-name>
+		<url-pattern>/ServletaddGDQDF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllGDQDF</servlet-name>
+		<servlet-class>servlet.ServletFindAllGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllGDQDF</servlet-name>
+		<url-pattern>/ServletFindAllGDQDF</url-pattern>
+	</servlet-mapping>
+	<!-- 删除故障信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteGDQDF</servlet-name>
+		<servlet-class>servlet.ServletDeleteGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteGDQDF</servlet-name>
+		<url-pattern>/ServletDeleteGDQDF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个故障信息 -->
+	<servlet>
+		<servlet-name>ServletSelectGDQDF</servlet-name>
+		<servlet-class>servlet.ServletSelectGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectGDQDF</servlet-name>
+		<url-pattern>/ServletSelectGDQDF</url-pattern>
+	</servlet-mapping>
+	<!-- 修改故障信息 -->
+	<servlet>
+		<servlet-name>ServletEditGDQDF</servlet-name>
+		<servlet-class>servlet.ServletEditGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditGDQDF</servlet-name>
+		<url-pattern>/ServletEditGDQDF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>ServletSearchGDQDF</servlet-name>
+		<servlet-class>servlet.ServletSearchGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchGDQDF</servlet-name>
+		<url-pattern>/ServletSearchGDQDF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加设备信息 -->
+	<servlet>
+		<servlet-name>ServletaddYDQ</servlet-name>
+		<servlet-class>servlet.ServletaddYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddYDQ</servlet-name>
+		<url-pattern>/ServletaddYDQ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllYDQ</servlet-name>
+		<servlet-class>servlet.ServletFindAllYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllYDQ</servlet-name>
+		<url-pattern>/ServletFindAllYDQ</url-pattern>
+	</servlet-mapping>
+	<!-- 删除设备信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteYDQ</servlet-name>
+		<servlet-class>servlet.ServletDeleteYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteYDQ</servlet-name>
+		<url-pattern>/ServletDeleteYDQ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个设备信息 -->
+	<servlet>
+		<servlet-name>ServletSelectYDQ</servlet-name>
+		<servlet-class>servlet.ServletSelectYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectYDQ</servlet-name>
+		<url-pattern>/ServletSelectYDQ</url-pattern>
+	</servlet-mapping>
+	<!-- 修改设备信息 -->
+	<servlet>
+		<servlet-name>ServletEditYDQ</servlet-name>
+		<servlet-class>servlet.ServletEditYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditYDQ</servlet-name>
+		<url-pattern>/ServletEditYDQ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>ServletSearchYDQ</servlet-name>
+		<servlet-class>servlet.ServletSearchYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchYDQ</servlet-name>
+		<url-pattern>/ServletSearchYDQ</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加故障信息 -->
+	<servlet>
+		<servlet-name>ServletaddYDQF</servlet-name>
+		<servlet-class>servlet.ServletaddYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddYDQF</servlet-name>
+		<url-pattern>/ServletaddYDQF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllYDQF</servlet-name>
+		<servlet-class>servlet.ServletFindAllYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllYDQF</servlet-name>
+		<url-pattern>/ServletFindAllYDQF</url-pattern>
+	</servlet-mapping>
+	<!-- 删除故障信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteYDQF</servlet-name>
+		<servlet-class>servlet.ServletDeleteYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteYDQF</servlet-name>
+		<url-pattern>/ServletDeleteYDQF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个故障信息 -->
+	<servlet>
+		<servlet-name>ServletSelectYDQF</servlet-name>
+		<servlet-class>servlet.ServletSelectYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectYDQF</servlet-name>
+		<url-pattern>/ServletSelectYDQF</url-pattern>
+	</servlet-mapping>
+	<!-- 修改故障信息 -->
+	<servlet>
+		<servlet-name>ServletEditYDQF</servlet-name>
+		<servlet-class>servlet.ServletEditYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditYDQF</servlet-name>
+		<url-pattern>/ServletEditYDQF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>ServletSearchYDQF</servlet-name>
+		<servlet-class>servlet.ServletSearchYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchYDQF</servlet-name>
+		<url-pattern>/ServletSearchYDQF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加设备信息 -->
+	<servlet>
+		<servlet-name>ServletaddLSXT</servlet-name>
+		<servlet-class>servlet.ServletaddLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddLSXT</servlet-name>
+		<url-pattern>/ServletaddLSXT</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllLSXT</servlet-name>
+		<servlet-class>servlet.ServletFindAllLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllLSXT</servlet-name>
+		<url-pattern>/ServletFindAllLSXT</url-pattern>
+	</servlet-mapping>
+	<!-- 删除设备信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteLSXT</servlet-name>
+		<servlet-class>servlet.ServletDeleteLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteLSXT</servlet-name>
+		<url-pattern>/ServletDeleteLSXT</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个设备信息 -->
+	<servlet>
+		<servlet-name>ServletSelectLSXT</servlet-name>
+		<servlet-class>servlet.ServletSelectLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectLSXT</servlet-name>
+		<url-pattern>/ServletSelectLSXT</url-pattern>
+	</servlet-mapping>
+	<!-- 修改设备信息 -->
+	<servlet>
+		<servlet-name>ServletEditLSXT</servlet-name>
+		<servlet-class>servlet.ServletEditLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditLSXT</servlet-name>
+		<url-pattern>/ServletEditLSXT</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>ServletSearchLSXT</servlet-name>
+		<servlet-class>servlet.ServletSearchLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchLSXT</servlet-name>
+		<url-pattern>/ServletSearchLSXT</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加故障信息 -->
+	<servlet>
+		<servlet-name>ServletaddLSXTF</servlet-name>
+		<servlet-class>servlet.ServletaddLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddLSXTF</servlet-name>
+		<url-pattern>/ServletaddLSXTF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllLSXTF</servlet-name>
+		<servlet-class>servlet.ServletFindAllLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllLSXTF</servlet-name>
+		<url-pattern>/ServletFindAllLSXTF</url-pattern>
+	</servlet-mapping>
+	<!-- 删除故障信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteLSXTF</servlet-name>
+		<servlet-class>servlet.ServletDeleteLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteLSXTF</servlet-name>
+		<url-pattern>/ServletDeleteLSXTF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个故障信息 -->
+	<servlet>
+		<servlet-name>ServletSelectLSXTF</servlet-name>
+		<servlet-class>servlet.ServletSelectLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectLSXTF</servlet-name>
+		<url-pattern>/ServletSelectLSXTF</url-pattern>
+	</servlet-mapping>
+	<!-- 修改故障信息 -->
+	<servlet>
+		<servlet-name>ServletEditLSXTF</servlet-name>
+		<servlet-class>servlet.ServletEditLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditLSXTF</servlet-name>
+		<url-pattern>/ServletEditLSXTF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>ServletSearchLSXTF</servlet-name>
+		<servlet-class>servlet.ServletSearchLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchLSXTF</servlet-name>
+		<url-pattern>/ServletSearchLSXTF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加设备信息 -->
+	<servlet>
+		<servlet-name>ServletaddCTC</servlet-name>
+		<servlet-class>servlet.ServletaddCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddCTC</servlet-name>
+		<url-pattern>/ServletaddCTC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllCTC</servlet-name>
+		<servlet-class>servlet.ServletFindAllCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllCTC</servlet-name>
+		<url-pattern>/ServletFindAllCTC</url-pattern>
+	</servlet-mapping>
+	<!-- 删除设备信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteCTC</servlet-name>
+		<servlet-class>servlet.ServletDeleteCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteCTC</servlet-name>
+		<url-pattern>/ServletDeleteCTC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个设备信息 -->
+	<servlet>
+		<servlet-name>ServletSelectCTC</servlet-name>
+		<servlet-class>servlet.ServletSelectCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectCTC</servlet-name>
+		<url-pattern>/ServletSelectCTC</url-pattern>
+	</servlet-mapping>
+	<!-- 修改设备信息 -->
+	<servlet>
+		<servlet-name>ServletEditCTC</servlet-name>
+		<servlet-class>servlet.ServletEditCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditCTC</servlet-name>
+		<url-pattern>/ServletEditCTC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>ServletSearchCTC</servlet-name>
+		<servlet-class>servlet.ServletSearchCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchCTC</servlet-name>
+		<url-pattern>/ServletSearchCTC</url-pattern>
+	</servlet-mapping>
+
+	<!-- 添加故障信息 -->
+	<servlet>
+		<servlet-name>ServletaddCTCF</servlet-name>
+		<servlet-class>servlet.ServletaddCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletaddCTCF</servlet-name>
+		<url-pattern>/ServletaddCTCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>ServletFindAllCTCF</servlet-name>
+		<servlet-class>servlet.ServletFindAllCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllCTCF</servlet-name>
+		<url-pattern>/ServletFindAllCTCF</url-pattern>
+	</servlet-mapping>
+	<!-- 删除故障信息 -->
+	<servlet>
+		<servlet-name>ServletDeleteCTCF</servlet-name>
+		<servlet-class>servlet.ServletDeleteCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDeleteCTCF</servlet-name>
+		<url-pattern>/ServletDeleteCTCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个故障信息 -->
+	<servlet>
+		<servlet-name>ServletSelectCTCF</servlet-name>
+		<servlet-class>servlet.ServletSelectCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectCTCF</servlet-name>
+		<url-pattern>/ServletSelectCTCF</url-pattern>
+	</servlet-mapping>
+	<!-- 修改故障信息 -->
+	<servlet>
+		<servlet-name>ServletEditCTCF</servlet-name>
+		<servlet-class>servlet.ServletEditCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditCTCF</servlet-name>
+		<url-pattern>/ServletEditCTCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>ServletSearchCTCF</servlet-name>
+		<servlet-class>servlet.ServletSearchCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSearchCTCF</servlet-name>
+		<url-pattern>/ServletSearchCTCF</url-pattern>
+	</servlet-mapping>
+
+	
+	<!-- 查询所有账号 -->
+	<servlet>
+		<servlet-name>ServletFindAllUser</servlet-name>
+		<servlet-class>servlet.ServletFindAllUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFindAllUser</servlet-name>
+		<url-pattern>/ServletFindAllUser</url-pattern>
+	</servlet-mapping>
+	<!-- 查询一个账号 -->
+	<servlet>
+		<servlet-name>ServletSelectUser</servlet-name>
+		<servlet-class>servlet.ServletSelectUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectUser</servlet-name>
+		<url-pattern>/ServletSelectUser</url-pattern>
+	</servlet-mapping>
+	<!-- 修改账号信息 -->
+	<servlet>
+		<servlet-name>ServletEditUser</servlet-name>
+		<servlet-class>servlet.ServletEditUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditUser</servlet-name>
+		<url-pattern>/ServletEditUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ServletStuSum</servlet-name>
+		<servlet-class>servlet.ServletStuSum</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletStuSum</servlet-name>
+		<url-pattern>/ServletStuSum</url-pattern>
+	</servlet-mapping>
+	<!-- 文件上传 -->
+	<servlet>
+		<servlet-name>ServletUploadFile</servlet-name>
+		<servlet-class>servlet.ServletUploadFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletUploadFile</servlet-name>
+		<url-pattern>/ServletUploadFile</url-pattern>
+	</servlet-mapping>
+	<!-- 文件显示 -->
+	<servlet>
+		<servlet-name>ServletListFile</servlet-name>
+		<servlet-class>servlet.ServletListFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletListFile</servlet-name>
+		<url-pattern>/ServletListFile</url-pattern>
+	</servlet-mapping>
+	<!-- 文件下载 -->
+	<servlet>
+		<servlet-name>ServletDownloadFile</servlet-name>
+		<servlet-class>servlet.ServletDownloadFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDownloadFile</servlet-name>
+		<url-pattern>/ServletDownloadFile</url-pattern>
+	</servlet-mapping>
+
+	
+	<!-- 学生功能 -->
+	<!-- 查询学生信息 -->
+	<servlet>
+		<servlet-name>ServletStudentInfo</servlet-name>
+		<servlet-class>servlet.student.ServletStudentInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletStudentInfo</servlet-name>
+		<url-pattern>/ServletStudentInfo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ServletSelectStudentInfo</servlet-name>
+		<servlet-class>servlet.student.ServletSelectStudentInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletSelectStudentInfo</servlet-name>
+		<url-pattern>/ServletSelectStudentInfo</url-pattern>
+	</servlet-mapping>
+	<!-- 修改学生信息 -->
+	<servlet>
+		<servlet-name>ServletEditStudentInfo</servlet-name>
+		<servlet-class>servlet.student.ServletEditStudentInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEditStudentInfo</servlet-name>
+		<url-pattern>/ServletEditStudentInfo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PageServlet</servlet-name>
+		<servlet-class>servlet.PageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PageServlet</servlet-name>
+		<url-pattern>/PageServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllXHJ</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllXHJ</servlet-name>
+		<url-pattern>/stu.ServletFindAllXHJ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchXHJ</servlet-name>
+		<servlet-class>servlet.student.ServletSearchXHJ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchXHJ</servlet-name>
+		<url-pattern>/stu.ServletSearchXHJ</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllXHJF</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllXHJF</servlet-name>
+		<url-pattern>/stu.ServletFindAllXHJF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchXHJF</servlet-name>
+		<servlet-class>servlet.student.ServletSearchXHJF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchXHJF</servlet-name>
+		<url-pattern>/stu.ServletSearchXHJF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllDC</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllDC</servlet-name>
+		<url-pattern>/stu.ServletFindAllDC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchDC</servlet-name>
+		<servlet-class>servlet.student.ServletSearchDC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchDC</servlet-name>
+		<url-pattern>/stu.ServletSearchDC</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllDCF</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllDCF</servlet-name>
+		<url-pattern>/stu.ServletFindAllDCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchDCF</servlet-name>
+		<servlet-class>servlet.student.ServletSearchDCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchDCF</servlet-name>
+		<url-pattern>/stu.ServletSearchDCF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllGDQD</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllGDQD</servlet-name>
+		<url-pattern>/stu.ServletFindAllGDQD</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchGDQD</servlet-name>
+		<servlet-class>servlet.student.ServletSearchGDQD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchGDQD</servlet-name>
+		<url-pattern>/stu.ServletSearchGDQD</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllGDQDF</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllGDQDF</servlet-name>
+		<url-pattern>/stu.ServletFindAllGDQDF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchGDQDF</servlet-name>
+		<servlet-class>servlet.student.ServletSearchGDQDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchGDQDF</servlet-name>
+		<url-pattern>/stu.ServletSearchGDQDF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllYDQ</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllYDQ</servlet-name>
+		<url-pattern>/stu.ServletFindAllYDQ</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchYDQ</servlet-name>
+		<servlet-class>servlet.student.ServletSearchYDQ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchYDQ</servlet-name>
+		<url-pattern>/stu.ServletSearchYDQ</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllYDQF</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllYDQF</servlet-name>
+		<url-pattern>/stu.ServletFindAllYDQF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchYDQF</servlet-name>
+		<servlet-class>servlet.student.ServletSearchYDQF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchYDQF</servlet-name>
+		<url-pattern>/stu.ServletSearchYDQF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllLSXT</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllLSXT</servlet-name>
+		<url-pattern>/stu.ServletFindAllLSXT</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchLSXT</servlet-name>
+		<servlet-class>servlet.student.ServletSearchLSXT</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchLSXT</servlet-name>
+		<url-pattern>/stu.ServletSearchLSXT</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllLSXTF</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllLSXTF</servlet-name>
+		<url-pattern>/stu.ServletFindAllLSXTF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchLSXTF</servlet-name>
+		<servlet-class>servlet.student.ServletSearchLSXTF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchLSXTF</servlet-name>
+		<url-pattern>/stu.ServletSearchLSXTF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllCTC</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllCTC</servlet-name>
+		<url-pattern>/stu.ServletFindAllCTC</url-pattern>
+	</servlet-mapping>
+	<!-- 查询设备信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchCTC</servlet-name>
+		<servlet-class>servlet.student.ServletSearchCTC</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchCTC</servlet-name>
+		<url-pattern>/stu.ServletSearchCTC</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查询所有故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletFindAllCTCF</servlet-name>
+		<servlet-class>servlet.student.ServletFindAllCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletFindAllCTCF</servlet-name>
+		<url-pattern>/stu.ServletFindAllCTCF</url-pattern>
+	</servlet-mapping>
+	<!-- 查询故障信息 -->
+	<servlet>
+		<servlet-name>stu.ServletSearchCTCF</servlet-name>
+		<servlet-class>servlet.student.ServletSearchCTCF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>stu.ServletSearchCTCF</servlet-name>
+		<url-pattern>/stu.ServletSearchCTCF</url-pattern>
+	</servlet-mapping>
+
+	<!-- 注册 -->
+	<servlet>
+		<servlet-name>ServletRegisterStu</servlet-name>
+		<servlet-class>servlet.student.ServletRegisterStu</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletRegisterStu</servlet-name>
+		<url-pattern>/ServletRegisterStu</url-pattern>
+	</servlet-mapping>
+	<!-- 注册成功 -->
+	<servlet>
+		<servlet-name>ServletRegistersStudent</servlet-name>
+		<servlet-class>servlet.student.ServletRegistersStudent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletRegistersStudent</servlet-name>
+		<url-pattern>/ServletRegistersStudent</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>login/login.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
